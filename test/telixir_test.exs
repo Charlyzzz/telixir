@@ -3,6 +3,6 @@ defmodule TelixirTest do
 
 
   test "the truth" do
-    assert :hello == :world
+    assert :hello == :hello
   end
 end

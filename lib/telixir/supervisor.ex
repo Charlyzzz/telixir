@@ -1,12 +1,15 @@
 defmodule Telixir.Supervisor do
-    use Supervisor
+	use Supervisor
 
-    def start_link do
-        Supervisor.start_link(__MODULE__,:ok)
-    end
+	def start_link do
+		Supervisor.start_link(__MODULE__,:ok)
+	end
 
-    def init(:ok) do
-       children = [worker(Telixir.Bot,[Telixir.Bot])] 
-       supervise(children, strategy: :one_for_one)
-    end
+	def init(:ok) do
+		children = [
+			worker(Telixir.Bot, [])
+		] 
+		
+		supervise(children, strategy: :one_for_one)
+	end
 end

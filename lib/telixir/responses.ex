@@ -1,15 +1,11 @@
 defmodule Telixir.Bot.Responses do
-    use Telixir.Bot.Helpers
-   
-    on_command "hola" do
-        IO.puts 1
-    end
+	use Telixir.Bot.Helpers
 
-    on "hola" do
-        IO.puts 0
-    end
+	on_command("hola", _body, update) do
+		IO.inspect sender(update)
+	end
 
-    when_matches ~r/foo/ do
-        IO.puts 2
-    end         
+	otherwise(_update) do
+		IO.puts("Otra cosa")
+	end
 end

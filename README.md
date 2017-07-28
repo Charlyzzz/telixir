@@ -9,7 +9,7 @@ by adding `telixir` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:telixir, "~> 0.1.0"}]
+	[{:telixir, "~> 0.1.0"}]
 end
 ```
 
